@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { ProductsRepository } from '../repositories/products.repository';
 
 @Controller('products')
@@ -10,8 +10,9 @@ export class ProductController {
   }
 
   @Get()
-  getProducts() {
-   return this.productsRepository.getProducts();
+  getProducts(@Query('filter') filter = '') {
+   console.log('filter = ', filter);
+   return this.productsRepository.getProducts(filter);
   }
 
 }
