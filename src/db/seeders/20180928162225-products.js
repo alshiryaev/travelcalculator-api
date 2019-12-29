@@ -62,7 +62,7 @@ const products = [
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('products', firstProducts.products, {});
+    return queryInterface.bulkInsert('products', products, {});
   },
 
   down: (queryInterface, Sequelize) => {

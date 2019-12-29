@@ -8,7 +8,6 @@ export class ProductController {
 
 
   constructor(private readonly productsRepository: ProductsRepository) {
-
   }
 
   @Get()
