@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import { Sequelize } from 'sequelize-typescript';
 import { AppModule } from './app.module';
 import { Ingredient, Product } from './models/data-models';
+import { Food } from './models/food.model';
 
 
 async function bootstrap() {
@@ -21,7 +22,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   const sequelize = new Sequelize(process.env.DATABASE_URL);
-  sequelize.addModels([Product, Ingredient]);
+  sequelize.addModels([Product, Ingredient, Food]);
 
 
   await app.listen(5000);

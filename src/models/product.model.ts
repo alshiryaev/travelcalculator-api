@@ -1,4 +1,5 @@
 import { Column, DataType, HasOne, IsUUID, Model, PrimaryKey, Table } from 'sequelize-typescript';
+import { Ingredient } from './ingredient.model';
 
 @Table({
   timestamps: false,
@@ -24,4 +25,7 @@ export class Product extends Model<Product> {
 
   @Column({type: DataType.DOUBLE} )
   calories: number;
+
+  @HasOne(() => Ingredient)
+  ingedient: Ingredient;
 }
