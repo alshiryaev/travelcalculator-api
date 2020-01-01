@@ -1,7 +1,6 @@
 import {
   Column,
   DataType,
-  HasOne,
   IsUUID,
   Model,
   PrimaryKey,

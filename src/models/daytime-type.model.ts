@@ -4,16 +4,16 @@ import {
   IsUUID,
   Model,
   PrimaryKey,
-  ForeignKey,
-  BelongsTo,
   Table,
+  BelongsToMany,
 } from 'sequelize-typescript';
 import { Food } from './food.model';
+import { FoodDayTime } from './food-daytimes.model';
 
 @Table({
   timestamps: false,
 })
-export class Recipe extends Model<Recipe> {
+export class DayTimeType extends Model<DayTimeType> {
   @IsUUID(4)
   @PrimaryKey
   @Column({ type: DataType.UUID })
@@ -22,13 +22,6 @@ export class Recipe extends Model<Recipe> {
   @Column({ type: DataType.STRING })
   name: string;
 
-  @Column({ type: DataType.TEXT })
-  description: string;
-
-  @ForeignKey(() => Food)
-  @Column({ type: DataType.UUID })
-  foodId: string;
-
-  @BelongsTo(() => Food)
-  food: Food;
+  @BelongsToMany(() => Food, () => FoodDayTime)
+  foods: Food[];
 }

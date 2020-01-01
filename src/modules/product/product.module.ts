@@ -4,8 +4,6 @@ import { ProductsRepository } from './repositories/products.repository';
 
 @Module({
   controllers: [ProductController],
-  providers: [ProductsRepository]
+  providers: [ProductsRepository],
 })
-export class ProductModule {
-
-}
+export class ProductModule {}

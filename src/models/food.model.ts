@@ -1,10 +1,19 @@
-import { Column, DataType, IsUUID, Model, PrimaryKey, Table } from 'sequelize-typescript';
+import {
+  Column,
+  DataType,
+  IsUUID,
+  Model,
+  PrimaryKey,
+  Table,
+  HasMany,
+} from 'sequelize-typescript';
+import { Recipe } from './recipe.model';
+import { Ingredient } from './ingredient.model';
 
 @Table({
-  timestamps: false
+  timestamps: false,
 })
 export class Food extends Model<Food> {
-
   @IsUUID(4)
   @PrimaryKey
   @Column({ type: DataType.UUID })
@@ -13,4 +22,9 @@ export class Food extends Model<Food> {
   @Column(DataType.STRING)
   name: string;
 
+  @HasMany(() => Recipe)
+  recipe: Recipe;
+
+  @HasMany(() => Ingredient)
+  ingredient: Ingredient;
 }

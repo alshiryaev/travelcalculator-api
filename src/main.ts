@@ -3,9 +3,14 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { config } from 'dotenv';
 import { Sequelize } from 'sequelize-typescript';
 import { AppModule } from './app.module';
-import { Ingredient, Product } from './models/data-models';
 import { Food } from './models/food.model';
-
+import { Product } from './models/product.model';
+import { Ingredient } from './models/ingredient.model';
+import { Recipe } from './models/recipe.model';
+import { TravelType } from './models/travel-type.model';
+import { FoodTravelType } from './models/food-traveltypes.model';
+import { DayTimeType } from './models/daytime-type.model';
+import { FoodDayTime } from './models/food-daytimes.model';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -22,8 +27,16 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   const sequelize = new Sequelize(process.env.DATABASE_URL);
-  sequelize.addModels([Product, Ingredient, Food]);
-
+  sequelize.addModels([
+    Product,
+    Ingredient,
+    Food,
+    Recipe,
+    TravelType,
+    FoodTravelType,
+    DayTimeType,
+    FoodDayTime,
+  ]);
 
   await app.listen(5000);
 }
