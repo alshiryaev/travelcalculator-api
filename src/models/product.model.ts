@@ -12,6 +12,7 @@ import { Ingredient } from './ingredient.model';
 @Table({
   timestamps: false,
   modelName: 'products',
+
 })
 export class Product extends Model<Product> {
   @IsUUID(4)

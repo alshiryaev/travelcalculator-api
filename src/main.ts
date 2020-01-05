@@ -13,9 +13,8 @@ import { DayTimeType } from './models/daytime-type.model';
 import { FoodDayTime } from './models/food-daytimes.model';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('/api');
-  app.enableCors();
 
   const options = new DocumentBuilder()
     .setTitle('Travelcalculator API')
