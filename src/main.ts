@@ -3,14 +3,14 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { config } from 'dotenv';
 import { Sequelize } from 'sequelize-typescript';
 import { AppModule } from './app.module';
-import { Food } from './models/food.model';
-import { Product } from './models/product.model';
-import { Ingredient } from './models/ingredient.model';
-import { Recipe } from './models/recipe.model';
-import { TravelType } from './models/travel-type.model';
-import { FoodTravelType } from './models/food-traveltypes.model';
 import { DayTimeType } from './models/daytime-type.model';
 import { FoodDayTime } from './models/food-daytimes.model';
+import { FoodTravelType } from './models/food-traveltypes.model';
+import { Food } from './models/food.model';
+import { Ingredient } from './models/ingredient.model';
+import { Product } from './models/product.model';
+import { Recipe } from './models/recipe.model';
+import { TravelType } from './models/travel-type.model';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });

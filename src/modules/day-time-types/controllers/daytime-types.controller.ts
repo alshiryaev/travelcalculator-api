@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { DayTimeTypeRepository } from '../../repositories/day-time-type/day-time-type.repository';
+import { DayTimeTypeRepository } from '../repositories/daytime-type.repository';
 
-@Controller('day-time-types')
-@ApiTags('day-time-types')
+@Controller('daytime-types')
+@ApiTags('Daytime-types')
 export class DayTimeTypesController {
 
   constructor(private readonly dayTimeTypeRepository: DayTimeTypeRepository) {

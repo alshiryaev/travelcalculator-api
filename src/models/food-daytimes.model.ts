@@ -1,3 +1,5 @@
+import { DayTimeType } from './daytime-type.model';
+import { Food } from './food.model';
 import {
   IsUUID,
   PrimaryKey,
@@ -8,8 +10,6 @@ import {
   Model,
   AllowNull,
 } from 'sequelize-typescript';
-import { Food } from './food.model';
-import { DayTimeType } from './daytime-type.model';
 
 @Table({
   timestamps: false,
