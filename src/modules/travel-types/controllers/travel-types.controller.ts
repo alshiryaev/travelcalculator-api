@@ -3,7 +3,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { TravelTypeRepository } from '../repositories/travel-type.repository';
 
 @Controller('traveltypes')
-@ApiTags('Traveltypes')
+@ApiTags('Travel types')
 export class TravelTypesController {
 
   constructor(private readonly travelTypeRepository: TravelTypeRepository) {
