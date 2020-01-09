@@ -1,3 +1,5 @@
+import { FoodDayTime } from './food-daytimes.model';
+import { Food } from './food.model';
 import {
   Column,
   DataType,
@@ -7,11 +9,10 @@ import {
   Table,
   BelongsToMany,
 } from 'sequelize-typescript';
-import { Food } from './food.model';
-import { FoodDayTime } from './food-daytimes.model';
 
 @Table({
   timestamps: false,
+  modelName: 'dayTimeTypes'
 })
 export class DayTimeType extends Model<DayTimeType> {
   @IsUUID(4)
